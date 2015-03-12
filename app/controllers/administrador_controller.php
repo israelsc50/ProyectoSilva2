@@ -16,6 +16,13 @@ var $name = 'Administrador';
 		// pr('hola'); exit;
 	}
 
+
+	public function beforeFilter(){
+		if(!$this->Session->check('Usuario')){
+			$this->redirect(array('controller' => 'Users', 'action'=> 'login'));
+		}
+	}
+
 	public function post(){
 		$this->layout = 'administrador';
 
@@ -24,8 +31,9 @@ var $name = 'Administrador';
 	}
 	public function save_post(){
 
-		$this->Publicacion->create();
-		if($this->Publicacion->save($this->data)){
+		pr($this->data);
+		
+		if($this->Publicacion->save($this->data['Publicacion'])){
 			echo json_encode(array('success' => true));
 		} else {
 			echo json_encode(array('success' => false));
@@ -41,6 +49,17 @@ var $name = 'Administrador';
 		$arrPublicaciones = $this->Publicacion->find('all');
 		pr($arrPublicaciones);
 		$this->set('publicaciones' , $arrPublicaciones);
+
+	}
+
+	public function edit_post($id = null){
+		$this->layout = 'administrador';
+
+		$post = $this->Publicacion->findById($id);
+		$this->set('publicaciones' , $post);
+
+
+		pr($post);
 
 	}
 
