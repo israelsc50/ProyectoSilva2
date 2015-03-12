@@ -23,22 +23,22 @@
                 <div class="row">
                     <div class="col-lg-6">
 
-                        <form id="frmAutor" action="http://localhost/cakephp-1.3.20/autor/save_autor" role="form" method="POST">
+                        <form id="frmAutor" action="http://localhost/cakephp-1.3.20/users/login" role="form" method="POST">
 
                             <div class="form-group">
-                                <label>Nombre</label>
-                                <input name="data[nombre]" class="form-control">
+                                <label>Usuario</label>
+                                <input name="data[usuario]" class="form-control">
                             </div>
 
 
 
                             <div class="form-group">
-                                <label>Apellido</label>
-                                <input type="password" name="data[apellido]" class="form-control">
+                                <label>Password</label>
+                                <input type="password" name="data[password]" class="form-control">
                             </div>
       
 
-                            <a onclick="Autor.guardar()" class="btn btn-default">Submit Button</a>
+                            <button onclick="Autor.guardar()" class="btn btn-default">Submit Button</button>
                             <button type="reset" class="btn btn-default">Reset Button</button>
 
                         </form>

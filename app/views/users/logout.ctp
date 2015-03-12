@@ -37,6 +37,9 @@
                                 <input name="data[apellido]" class="form-control">
                             </div>
 
+                            <div class="form-group">
+                                <label>Nick</label>
+                                <input name="data[nick]" class="form-control">
                                 
 
 
